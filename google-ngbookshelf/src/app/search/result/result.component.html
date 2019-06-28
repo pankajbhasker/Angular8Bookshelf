@@ -1,0 +1,35 @@
+<div id="f" class="container">
+  <div class="col-md-2">
+    <div class="results-container rightBorder" *ngIf="book">
+        <div class ="card-content" *ngFor="let book of book.items" >
+            <p><img src={{book.volumeInfo.imageLinks.smallThumbnail}} /></p>
+
+            <b>Rating </b>{{book.volumeInfo.averageRating}}
+            <div class="col-md-9 rightBorder" *ngIf="book">
+              <h2> {{book.volumeInfo.title}} </h2>
+              <b>Description</b>
+              <p>{{book.volumeInfo.description}}</p>
+              <hr/>
+              <div class="row">
+                  <div class="col-sm-6" >
+                   <b>Category</b> 
+                  </div>
+                  <div class="col-sm-6">
+                      {{book.volumeInfo.categories}}
+                  </div>
+                </div>
+                <b>Author</b>
+                <p>{{book.volumeInfo.authors}}</p>
+                <b>Publisher</b>
+                <p>{{book.volumeInfo.publisher}}</p>
+                <b>Published date</b>
+                <p>{{book.volumeInfo.publishedDate}}</p>
+                <b>Language</b>
+                <p>{{book.volumeInfo.language}}</p>
+              <hr/>
+            </div>
+        </div>
+      
+    </div>
+  </div>
+</div>

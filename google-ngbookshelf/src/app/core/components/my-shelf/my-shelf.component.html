@@ -1,0 +1,22 @@
+<p>my-shelf works!</p>
+    <div class="card" *ngFor="let book of books.items" [routerLink]="['/search', book.volumeInfo.industryIdentifiers[0].identifier]">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <p *ngIf="book.volumeInfo.imageLinks"><img src={{book.volumeInfo.imageLinks.smallThumbnail}} /></p>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">{{book.volumeInfo.title}} </p>
+                  <p class="subtitle is-6">{{book.volumeInfo.subtitle}}</p>
+                </div>
+              </div>
+          
+              <div class="content">
+                <a href='https://books.google.co.in/books?isbn={{book.volumeInfo.industryIdentifiers[0].identifier }}' target='_blank'>https://books.google.co.in/books?isbn={{book.volumeInfo.industryIdentifiers[0].identifier}}</a>
+                <br>
+                <time datetime="2019-06-28">11:09 PM - 28 June 2019</time>
+              </div>
+            </div>
+          </div>

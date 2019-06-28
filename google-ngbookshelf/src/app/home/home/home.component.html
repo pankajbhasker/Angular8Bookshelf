@@ -1,0 +1,14 @@
+<section class="hero is-info is-large is-bold">
+    <div class="hero-body">
+      <div class="container">
+          <div class="field has-addons">
+              <div class="control is-expanded">
+                  <input class="input" type="search" placeholder="Search Books by ISBN, Title" #search id="search"/>
+              </div>
+              <div class="control">
+                  <button class="button is-info" (click)="OnSearch(search.value)">Search</button>      
+              </div>
+          </div>
+      </div>
+    </div>
+</section>
