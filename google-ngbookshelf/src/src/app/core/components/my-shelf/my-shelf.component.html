@@ -1,0 +1,40 @@
+<div class="hero-body">
+  <div class="container">
+    <div *ngIf="books">
+      <div class="col-md-1 results-container" *ngFor="let book of books.items">
+        <div class="card">
+          <div class="card-content">
+            <span class='title'> <b>{{book.volumeInfo.title}} :</b> </span> <span class='subtitle'>
+              {{book.volumeInfo.subtitle}} </span> <br />
+            <a href='https://books.google.co.in/books?isbn={{book.volumeInfo.industryIdentifiers[0].identifier }}'
+              target='_blank'>https://books.google.co.in/books?isbn={{book.volumeInfo.industryIdentifiers[0].identifier}}</a>
+            <p *ngIf="book.volumeInfo.imageLinks"><img src={{book.volumeInfo.imageLinks.smallThumbnail}}
+                [routerLink]="['/search', book.volumeInfo.industryIdentifiers[0].identifier]" />
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon class="material-icons is-info">arrow_drop_down_circle</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <label mat-menu-item>
+                  <span>Move To</span>
+                </label>
+                <hr class="navbar-divider">
+                <button mat-menu-item [routerLink]="['/search', book.volumeInfo.industryIdentifiers[0].identifier]">
+                  <mat-icon>assignment</mat-icon>
+                  <span>Currently Reading</span>
+                </button>
+                <button mat-menu-item disabled>
+                  <mat-icon>voicemail</mat-icon>
+                  <span>Want to Read</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>account_balance</mat-icon>
+                  <span>Have Read</span>
+                </button>
+              </mat-menu>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

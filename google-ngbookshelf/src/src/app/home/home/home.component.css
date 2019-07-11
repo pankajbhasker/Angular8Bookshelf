@@ -1,0 +1,10 @@
+.hero {
+    background-image: url('/assets/img/backgroundwallpaper.jpg') !important;
+    background-size: cover;
+    background-position: center center;
+    height: 10%;
+  }
+  .hero.is-large .hero-body{
+    background-position: center center;
+    padding-top: 2rem; 
+  }
