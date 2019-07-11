@@ -1,0 +1,55 @@
+
+<div class="hero-body">
+  <div class="container">
+   <!--
+    <div class="field has-addons">
+        <div class="control is-expanded">
+          
+        <input [name]= "search" class="input" type="search" placeholder="Search Books by ISBN, Title" #search id="search"/>
+      </div>
+      <div class="control">
+        <button class="button is-info" (click)="OnSearch(search.value)">Search</button>      
+      </div>
+    </div>
+   --> 
+  
+    <div *ngIf="books" id="f">
+        <div class="container">
+            <p>Message from parent: {{childMessageStr}}</p>
+          <div class="col-md-1 results-container" *ngFor="let book of books.items" > 
+             <div class="card">
+                <div class="card-content">
+                   
+                    <span class='title'> <b>{{book.volumeInfo.title}} :</b>  </span> <span class='subtitle'> {{book.volumeInfo.subtitle}}  </span> <br/>
+                    <a href='https://books.google.co.in/books?isbn={{book.volumeInfo.industryIdentifiers[0].identifier }}' target='_blank'>https://books.google.co.in/books?isbn={{book.volumeInfo.industryIdentifiers[0].identifier}}</a>
+                    <p *ngIf="book.volumeInfo.imageLinks"><img src={{book.volumeInfo.imageLinks.smallThumbnail}} [routerLink]="['/search', book.volumeInfo.industryIdentifiers[0].identifier]" />
+                      <button mat-fab [matMenuTriggerFor]="menu" color = "primary">
+                          <mat-icon>arrow_drop_down_circle</mat-icon>
+                      
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item>
+                                <span>Move To</span>
+                              </button>
+                          <hr class="navbar-divider">
+                          <button mat-menu-item>
+                            <mat-icon>assignment</mat-icon>
+                            <span>Currently Reading</span>
+                          </button>
+                          <button mat-menu-item disabled>
+                            <mat-icon>voicemail</mat-icon>
+                            <span>Want to Read</span>
+                          </button>
+                          <button mat-menu-item>
+                            <mat-icon>account_balance</mat-icon>
+                            <span>Have Read</span>
+                          </button>
+                        </mat-menu>
+                      </button>
+                    </p>
+                  </div>      
+              </div>      
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<nav class="navbar is-info">
+
+  <!-- logo -->
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <img src="assets/img/angular-logo.png">
+    </a>
+  </div>
+
+  <!-- menu -->
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" routerLink="">Home</a>
+      <a class="navbar-item" routerLink="contact">Contact</a>
+      <a class="navbar-item" routerLink="users">Users</a>
+      <a class="navbar-item" routerLink="search">Search</a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" routerLink="category">
+          Category
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            <span matBadge="4" matBadgeOverlap="false"> Currently Reading</span>
+          </a>
+          <a class="navbar-item">
+            <span matBadge="11" matBadgeOverlap="false" matBadgeColor="accent"> Want To Read</span>
+          </a>
+          <a class="navbar-item">
+            <span matBadge="28" matBadgeOverlap="false" matBadgeColor="warn"> Have Read</span>
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
